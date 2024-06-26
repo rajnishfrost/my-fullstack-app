@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors())
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 
 // Example API endpoint
 app.get('/api/hello', (req, res) => {
@@ -17,9 +17,9 @@ app.get('/api/hello', (req, res) => {
 });
 
 // Catch-all handler to serve React's index.html file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-});
+app.get('*' , (req , res) => {
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
