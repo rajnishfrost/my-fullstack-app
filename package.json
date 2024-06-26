@@ -1,18 +1,16 @@
 {
   "name": "my-fullstack-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm start",
-    "client": "cd frontend && npm start",
-    "build": "cd frontend && npm run build"
-  } ,
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+    "start": "npm run backend",
+    "backend": "node backend/server.js",
+    "build": "npm run install-all && npm run build-frontend",
+    "install-all": "cd frontend && npm install && cd ../backend && npm install",
+    "build-frontend": "cd frontend && npm run build"
+  },
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "express": "^4.17.1"
   }
 }
