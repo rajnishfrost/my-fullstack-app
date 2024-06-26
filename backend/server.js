@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
 app.use(cors())
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
